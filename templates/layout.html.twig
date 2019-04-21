@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hostel management</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+    <header>
+        <div class="container">
+            <h1 class="logo"></h1>
+            <nav>
+                <ul id="navigation">
+                    {% for item in navigation %}
+                        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="content">{% block content %}{% endblock %}</div>
+
+    <footer>
+        <div class="container clearfix">
+            <h2>Artur Jankowski - projekt zaliczeniowy </h2>
+        </div>
+    </footer>
+</body>
+</html>
