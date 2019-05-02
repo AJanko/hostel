@@ -25,7 +25,16 @@
         </div>
     </header>
 
-    <div id="content">{% block content %}{% endblock %}</div>
+    <div class="content">
+        {% block content %}
+            <div id="home">
+                <h1> Witaj na stronie hostelu Hajibi!</h1>
+                <h2>Żeby dokonać rezerwacji skorzystaj z zakładki rezerwacje</h2>
+                <h2>Jeśli chcesz złożyć nowe zamówienie skorzystaj z zakładki zamówienia</h2>
+            </div>
+
+        {% endblock %}
+    </div>
 
     <footer>
         <div class="container clearfix">

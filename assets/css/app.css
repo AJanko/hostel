@@ -6,6 +6,16 @@ body {
     font-weight: 800;
 }
 
+.content {
+    color: #D3D3D3;
+    text-align:center;
+}
+
+#home {
+    display: inline-block;
+    text-align: left;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
