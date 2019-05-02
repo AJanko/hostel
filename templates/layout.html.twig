@@ -18,7 +18,7 @@
             <nav>
                 <ul id="navigation">
                     {% for item in navigation %}
-                        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+                        <li><a href="{{ path(item.href) }}">{{ item.caption }}</a></li>
                     {% endfor %}
                 </ul>
             </nav>

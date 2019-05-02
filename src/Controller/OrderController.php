@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class OrderController extends AbstractController
 {
     /**
-     * @Route("/orders")
+     * @Route("/orders", name="orders")
      */
     public function order()
     {
