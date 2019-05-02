@@ -8,30 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      */
     public function home()
     {
-        return $this->render('layout.html.twig',
-            [
-                'navigation' =>
-                    [
-                        'home' =>
-                            [
-                                'href' => '/',
-                                'caption' => 'Home',
-                            ],
-                        'reservations' =>
-                            [
-                                'href' => '/reservations',
-                                'caption' => 'Reservations',
-                            ],
-                        'orders' =>
-                            [
-                                'href' => '/orders',
-                                'caption' => 'Orders',
-                            ],
-                    ]
-            ]);
+        return $this->render('layout.html.twig');
     }
 }
