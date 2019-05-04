@@ -6,12 +6,12 @@ body {
     font-weight: 800;
 }
 
-.content {
+.body {
     color: #D3D3D3;
     text-align:center;
 }
 
-#home {
+.content {
     display: inline-block;
     text-align: left;
 }
