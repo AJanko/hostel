@@ -12,10 +12,10 @@ class PersonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('surname')
-            ->add('phone')
-            ->add('document');
+            ->add('name', null, ['label' => 'Name'])
+            ->add('surname', null, ['label' => 'Surname'])
+            ->add('phone', null, ['label' => 'Phone Number'])
+            ->add('document', null, ['label' => 'Document ID']);
     }
 
     public function configureOptions(OptionsResolver $resolver)
