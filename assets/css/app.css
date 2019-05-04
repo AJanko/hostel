@@ -82,14 +82,14 @@ nav a:hover::before {
     width: 100%;
 }
 
-footer {
+.footer {
     display: block;
     background: #55d6aa;
     color: #444;
     margin-top: 10px;
 }
 
-footer h2 {
+.footer h2 {
     float: right;
 }
 
