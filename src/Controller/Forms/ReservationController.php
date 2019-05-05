@@ -38,6 +38,8 @@ class ReservationController extends AbstractController
             $em->persist($reservation);
             $em->flush();
 
+            $this->addFlash('success', 'Reservation Created for: '.$reservation->getPerson().'  from: '.$checkIn.'.'.'-'.$checkOut);
+
             return $this->redirectToRoute('reservations');
         }
 

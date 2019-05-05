@@ -26,6 +26,13 @@
     </header>
 
     <div class="body">
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
         {% block content %}
             <div class="content">
                 <h1>Witaj na stronie hostelu Hajibi!</h1>
