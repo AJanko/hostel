@@ -20,10 +20,10 @@ class ReservationType extends AbstractType
         $builder
             ->add('person', PersonType::class)
             ->add('checkIn', DateType::class, [
-                'format' => 'dd-MM-yy',
+                'format' => 'yy-MM-dd',
             ])
             ->add('checkOut', DateType::class, [
-                'format' => 'dd-MM-yy',
+                'format' => 'yy-MM-dd',
             ])
             ->add('room', EntityType::class, [
                 'class' => Room::class,
