@@ -13,27 +13,32 @@ class ReservationController extends AbstractController
     /**
      * @Route("/reservations", name="reservations")
      */
-    public function reservations(Request $request)
+    public function new(Request $request)
     {
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType::class, $reservation);
 
-//        $form->handleRequest($request);
+
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
             $reservation = $form->getData();
-            $reservation['date'] = new \DateTime('now');
 
-            var_dump($reservation);exit;
+            $checkIn = $reservation->getCheckIn();
+            $checkOut = $reservation->getCheckOut();
+            $price = $reservation->getRoom()->getPrice();
 
-//            $reservation['cost'] = ($reservation['checkOut'] - $reservation['checkIn']) * $reservation['room']->getPrice(); - or['price']
+            $cost = $checkOut->diff($checkIn)->days * $price;
+
+            $reservation->setCost($cost);
+            $reservation->setDate(new \DateTime('now'));
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($reservation);
             $em->flush();
 
-            return $this->redirectToRoute('reservation_succes');
+            return $this->redirectToRoute('reservations');
         }
 
         return $this->render('reservation.html.twig', [
