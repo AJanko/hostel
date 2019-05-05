@@ -1,8 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="content">
-        {{ form(form) }}
+    <div class="container">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+        {{ form_end(form) }}
     </div>
 {% endblock %}
 
