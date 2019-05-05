@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use DateTime;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,14 +20,16 @@ class Reservation
     /**
      * @var Person $person
      *
-     * @ORM\ManyToOne(targetEntity="Person", inversedBy="reservations")
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="reservations", cascade={"persist"})
+     * @ORM\JoinColumn(name="person_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $person;
 
     /**
      * @var Room $room
      *
-     * @ORM\OneToOne(targetEntity="Room", mappedBy="Room")
+     * @ORM\ManyToOne(targetEntity="Room", inversedBy="reservations", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="room_id", referencedColumnName="id", onDelete="SET NULL")
      */
     protected $room;
 
@@ -61,17 +62,17 @@ class Reservation
     protected $cost;
 
     /**
-     * @param ArrayCollection $person
+     * @param Person $person
      */
-    public function setPerson(ArrayCollection $person): void
+    public function setPerson(Person $person): void
     {
         $this->person = $person;
     }
 
     /**
-     * @param ArrayCollection $room
+     * @param Room $room
      */
-    public function setRoom(ArrayCollection $room): void
+    public function setRoom(Room $room): void
     {
         $this->room = $room;
     }
@@ -151,7 +152,7 @@ class Reservation
     /**
      * @return int
      */
-    public function getCost(): int
+    public function getCost(): ?int
     {
         return $this->cost;
     }

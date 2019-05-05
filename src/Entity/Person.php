@@ -46,9 +46,9 @@ class Person
     protected $document;
 
     /**
-     * @var ArrayCollection $reservations
+     * @var Reservation[]|ArrayCollection $reservations
      *
-     * @ORM\OneToMany(targetEntity="Reservation", mappedBy="person")
+     * @ORM\OneToMany(targetEntity="Reservation", mappedBy="person", cascade={"persist"})
      */
     protected $reservations;
 
@@ -84,18 +84,26 @@ class Person
         $this->document = $document;
     }
 
-    /**
-     * @param ArrayCollection $reservations
-     */
-    public function setReservations(ArrayCollection $reservations): void
+    /** return $this */
+    public function addReservation(Reservation $reservation)
     {
-        $this->reservations = $reservations;
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+        }
+
+        return $this;
+    }
+
+    /* @return bool */
+    public function removeReservation(Reservation $reservation)
+    {
+        return $this->reservation->removeReservation($reservation);
     }
 
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -103,7 +111,7 @@ class Person
     /**
      * @return string
      */
-    public function getSurname(): string
+    public function getSurname(): ?string
     {
         return $this->surname;
     }
@@ -111,7 +119,7 @@ class Person
     /**
      * @return string
      */
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
@@ -119,7 +127,7 @@ class Person
     /**
      * @return string
      */
-    public function getDocument(): string
+    public function getDocument(): ?string
     {
         return $this->document;
     }
@@ -127,7 +135,7 @@ class Person
     /**
      * @return ArrayCollection
      */
-    public function getReservations(): ArrayCollection
+    public function getReservations(): ?ArrayCollection
     {
         return $this->reservations;
     }
@@ -137,4 +145,8 @@ class Person
         return $this->name.' '.$this->surname;
     }
 
+    public function __construct()
+    {
+        $this->reservations = new ArrayCollection();
+    }
 }

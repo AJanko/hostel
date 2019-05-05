@@ -38,6 +38,13 @@ class Room
     protected $price;
 
     /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="Reservation", mappedBy="room")
+     */
+    protected $reservation;
+
+    /**
      * @param mixed $number
      */
     public function setNumber($number): void
