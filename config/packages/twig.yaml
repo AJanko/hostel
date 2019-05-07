@@ -20,3 +20,8 @@ twig:
                     'orders'
                 caption:
                     'Orders'
+            rooms:
+                href:
+                    'room'
+                caption:
+                    'Rooms'
