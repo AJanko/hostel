@@ -16,7 +16,7 @@ body {
     text-align: left;
 }
 
-.container {
+.custom-container {
     width: 80%;
     margin: 0 auto;
 }
@@ -82,14 +82,14 @@ nav a:hover::before {
     width: 100%;
 }
 
-.footer {
+.custom-footer {
     display: block;
     background: #55d6aa;
     color: #444;
     margin-top: 10px;
 }
 
-.footer h2 {
+.custom-footer h2 {
     float: right;
 }
 
