@@ -7,13 +7,13 @@
     {% endblock %}
 </head>
 
-<body>
+<body class="no-bootstrap-body">
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 
-    <header>
-        <div class="custom-container">
+    <header class="no-bootstrap-header">
+        <div class="no-bootstrap-container">
             <h1 class="logo"></h1>
             <nav>
                 <ul id="navigation">
@@ -25,7 +25,7 @@
         </div>
     </header>
 
-    <div class="body">
+    <div class="no-bootstrap-body">
 
         {% for message in app.flashes('success') %}
             <div class="alert alert-success">
@@ -34,7 +34,7 @@
         {% endfor %}
 
         {% block content %}
-            <div class="custom-content">
+            <div class="no-bootstrap-content">
                 <h1>Witaj na stronie hostelu Hajibi!</h1>
                 <h2>Żeby dokonać rezerwacji skorzystaj z zakładki rezerwacje</h2>
                 <h2>Jeśli chcesz złożyć nowe zamówienie skorzystaj z zakładki zamówienia</h2>
@@ -42,7 +42,7 @@
         {% endblock %}
     </div>
 
-    <footer class="custom-footer">
+    <footer class="no-bootstrap-footer">
         <div class="custom-container clearfix">
             <h2>Artur Jankowski - projekt zaliczeniowy </h2>
         </div>

@@ -1,31 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-body {
+
+.no-bootstrap-body {
     margin: 0;
     background: #222;
     font-family: 'Work Sans', sans-serif;
     font-weight: 800;
-}
-
-.body {
     color: #D3D3D3;
     text-align:center;
 }
 
-.content {
+.no-bootstrap-content {
     display: inline-block;
     text-align: left;
 }
 
-.custom-container {
+.no-bootstrap-container {
     width: 80%;
     margin: 0 auto;
 }
 
-header {
+.no-bootstrap-header {
     background: #55d6aa;
 }
 
-header::after {
+.no-bootstrap-header::after {
     content: '';
     display: table;
     clear: both;
@@ -82,14 +80,14 @@ nav a:hover::before {
     width: 100%;
 }
 
-.custom-footer {
+.no-bootstrap-footer {
     display: block;
     background: #55d6aa;
     color: #444;
     margin-top: 10px;
 }
 
-.custom-footer h2 {
+.no-bootstrap-footer h2 {
     float: right;
 }
 
