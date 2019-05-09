@@ -1,0 +1,20 @@
+{% block index %}
+    <div class="buttons">
+        <button class="btn btn-primary"><a href="{{ add_route.href }}">{{ add_route.name }}</a></button>
+        <button class="btn btn-primary btn_edit_room">{{ edit_route.name }}</button>
+    </div>
+{% endblock %}
+
+{% block edit %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_errors(form) }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block add %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_errors(form) }}
+    {{ form_end(form) }}
+{% endblock %}
