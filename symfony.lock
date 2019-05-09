@@ -1,4 +1,7 @@
 {
+    "datatables/datatables": {
+        "version": "1.10.19"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -78,6 +81,18 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "friendsofsymfony/jsrouting-bundle": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.3",
+            "ref": "a9f2e49180f75cdc71ae279a929c4b2e0638de84"
+        },
+        "files": [
+            "./config/routes/fos_js_routing.yaml"
+        ]
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -109,6 +124,18 @@
         },
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
+        ]
+    },
+    "sg/datatablesbundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "a8e5ae79a1eceec929a7393143c85ddf0ae0b4ff"
+        },
+        "files": [
+            "./config/routes/sg_datatables_bundle.yaml"
         ]
     },
     "symfony/apache-pack": {
@@ -245,8 +272,48 @@
             "./config/routes.yaml"
         ]
     },
+    "symfony/security-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
+        },
+        "files": [
+            "./config/packages/security.yaml"
+        ]
+    },
+    "symfony/security-core": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.8"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.8"
+    },
+    "symfony/serializer": {
+        "version": "v4.2.8"
+    },
     "symfony/stopwatch": {
         "version": "v4.2.6"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "1fb02a6e1c8f3d4232cce485c9afa868d63b115a"
+        },
+        "files": [
+            "./config/packages/translation.yaml",
+            "./translations/.gitignore"
+        ]
     },
     "symfony/twig-bridge": {
         "version": "v4.2.7"
@@ -291,6 +358,9 @@
     },
     "twig/twig": {
         "version": "v2.8.1"
+    },
+    "willdurand/jsonp-callback-validator": {
+        "version": "v1.1.0"
     },
     "zendframework/zend-code": {
         "version": "3.3.1"
