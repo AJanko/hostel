@@ -5,6 +5,7 @@ namespace App\Controller\Datatables;
 
 use App\Entity\Reservation;
 use Sg\DatatablesBundle\Datatable\AbstractDatatable;
+use Sg\DatatablesBundle\Datatable\Column\ActionColumn;
 use Sg\DatatablesBundle\Datatable\Column\Column;
 use Sg\DatatablesBundle\Datatable\Column\DateTimeColumn;
 
@@ -64,7 +65,35 @@ class ReservationDatatable extends AbstractDatatable
                     'searchable' => true,
                     'orderable'  => true,
                 ]
-            );
+            )
+            ->add(
+                null,
+                ActionColumn::class,
+                [
+                    'title' => 'Actions',
+                    'start_html' => '<div class="start_actions">',
+                    'end_html' => '</div>',
+                    'actions' => [
+                        [
+                            'route' => 'edit_reservation',
+                            'label' => 'Edit Reservation',
+                            'route_parameters' =>
+                                [
+                                    'id' => 'id',
+                                ],
+                            'attributes' =>
+                                [
+                                    'rel' => 'tooltip',
+                                    'title' => 'Show',
+                                    'class' => 'btn btn-primary btn-xs',
+                                    'role' => 'button',
+                                ],
+                            'start_html' => '<div class="start_edit_action">',
+                            'end_html' => '</div>',
+                        ]
+                    ]
+                ]);
+
     }
 
     public function getEntity()
