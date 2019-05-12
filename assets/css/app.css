@@ -89,6 +89,11 @@ nav a:hover::before {
 
 .no-bootstrap-footer h2 {
     float: right;
+    margin-right: 10px;
+}
+
+.datatable-container {
+    margin: 50px;
 }
 
 .clearfix {
