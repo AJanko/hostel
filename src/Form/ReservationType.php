@@ -35,7 +35,12 @@ class ReservationType extends AbstractType
                 },
                 'choice_label' => function ($room) { return $room; },
             ])
-            ->add('save', SubmitType::class, ['label' => 'Add reservation']);
+            ->add('save', SubmitType::class, [
+                'label' => 'Save reservation',
+                'attr' => [
+                    'class' => 'btn btn-primary',
+                    ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
