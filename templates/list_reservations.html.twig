@@ -1,7 +1,9 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    {{ sg_datatables_render(datatable) }}
+    <div class="datatable-container">
+        {{ sg_datatables_render(datatable) }}
+    </div>
 {% endblock %}
 
 {% block stylesheets %}
